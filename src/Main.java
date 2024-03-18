@@ -1,43 +1,14 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-
-    }
-    public class Book {
-        private String bookName;
-        int publishYear;
-        private Author author;
-        public Book(String bookName, Author author, int publishYear) {
-            this. bookName = bookName;
-            this.author = author;
-            this. publishYear = publishYear;
-        }
-        public Book(String bookName, Author author) {
-            this. bookName = bookName;
-            this.author = author;
-        }
-        public String getBookName() {
-            return this.bookName;
-        }
-
-        public Author getAuthor() {
-            return author;
-        }
-
-        public int getPublishYear() {
-            return publishYear;
-        }
-
-        public void setPublishYear(int publishYear) {
-            this.publishYear = publishYear;
-        }
-    }
-    public class Author{
-        String authorName;
-        public Author(String authorName) {
-            this.authorName = authorName;
-        }
-        public String getAuthorName() {
-            return this.authorName;
-        }
+        Author tolstoyLN = new Author("Толстой Лев Николаевич");
+        Author pushkinAS = new Author("Пушкин Александр Сергеевич");
+        Book warAndPeace = new Book("Война и мир", tolstoyLN, 2020);
+        Book evgeniyOnegin = new Book("Евгений Онегин", pushkinAS);
+        evgeniyOnegin.setPublishYear(LocalDate.now().getYear());
+        warAndPeace.setPublishYear(2300);
+        warAndPeace.printInfo('\\');
+        evgeniyOnegin.printInfo(',');
     }
 }
