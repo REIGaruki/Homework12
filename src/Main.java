@@ -1,12 +1,10 @@
-import java.time.LocalDate;
-
 public class Main {
     public static void main(String[] args) {
-        Author tolstoyLN = new Author("Толстой Лев Николаевич");
-        Author pushkinAS = new Author("Пушкин Александр Сергеевич");
+        Author tolstoyLN = new Author("Лев", "Толстой");
+        Author pushkinAS = new Author("Александр", "Пушкин");
         Book warAndPeace = new Book("Война и мир", tolstoyLN, 2020);
         Book evgeniyOnegin = new Book("Евгений Онегин", pushkinAS);
-        evgeniyOnegin.setPublishYear(LocalDate.now().getYear());
+        evgeniyOnegin.setPublishYear(2300);
         warAndPeace.setPublishYear(2300);
         warAndPeace.printInfo('\\');
         evgeniyOnegin.printInfo(',');

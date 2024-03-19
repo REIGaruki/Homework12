@@ -9,22 +9,25 @@ public class Book {
         this.author = author;
         if (publishYear <= LocalDate.now().getYear()) {
             this.publishYear = publishYear;
+        } else {
+            this.publishYear = LocalDate.now().getYear();
         }
     }
     public Book(String bookName, Author author) {
         this. bookName = bookName;
         this.author = author;
+        this.publishYear = LocalDate.now().getYear();
     }
     public String getBookName() {
         return this.bookName;
     }
 
-    public String getAuthor() {
-        return author.getAuthorName();
+    public Author getAuthor() {
+        return this.author;
     }
 
     public int getPublishYear() {
-        return publishYear;
+        return this.publishYear;
     }
 
     public void setPublishYear(int publishYear) {
@@ -33,6 +36,7 @@ public class Book {
         }
     }
     public void printInfo(char punctuation) {
-        System.out.println(getAuthor() + punctuation + " " + getBookName() + punctuation + " " + getPublishYear());
+        System.out.println(getAuthor().getAuthorName() + " " + getAuthor().getAuthorSurname() + punctuation + " " +
+                getBookName() + punctuation + " " + getPublishYear());
     }
 }
