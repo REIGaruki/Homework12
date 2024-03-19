@@ -14,9 +14,7 @@ public class Book {
         }
     }
     public Book(String bookName, Author author) {
-        this. bookName = bookName;
-        this.author = author;
-        this.publishYear = LocalDate.now().getYear();
+        this(bookName, author, LocalDate.now().getYear());
     }
     public String getBookName() {
         return this.bookName;
